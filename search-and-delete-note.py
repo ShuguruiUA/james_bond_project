@@ -15,3 +15,4 @@ class Notebook(UserDict):
     
     def delete(self, title):
         self.pop(title, None)
+        
