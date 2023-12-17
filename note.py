@@ -1,4 +1,6 @@
 from collections import UserDict
+import pickle
+
 
 class Note:
     def __init__(self, name, note):
@@ -17,11 +19,16 @@ class Note:
             self.teg.remove(teg)
             return 'mission complete'
         return 'teg is not found'
-    
+
     def __str__(self):
         return f"Note name: {self.name}, tegs: {'; '.join(p for p in self.teg)}, note: {self.note}"
-    
+
+
 class Notebook(UserDict):
+    def __init__(self):
+        super().__init__()
+        self.filename = "NoteBook.bin"
+
     def add_note(self, note):
         if isinstance(note, Note):
             self.data[note.name] = note
@@ -30,7 +37,7 @@ class Notebook(UserDict):
         for note in self.data.values():
             if name in note.name:
                 return note
-    
+
     def find_note_teg(self, teg):
         res = None
         res = []
@@ -39,3 +46,15 @@ class Notebook(UserDict):
                 res.append(note)
         return res
 
+    def saved_to_file(self):
+        with open(self.filename, "wb") as fh:
+            pickle.dump(self.data, fh)
+        return "File saved"
+
+    def load_from_file(self):
+        try:
+            with open(self.filename, "rb") as fh:
+                self.data = pickle.load(fh)
+            return "File loaded"
+        except FileNotFoundError:
+            return "File not found"
