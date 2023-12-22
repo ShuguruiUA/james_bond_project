@@ -26,6 +26,7 @@ Requires pip to install.
 
 ```sh
 $ pip install [folder path setup.py]
+$ pip install -i https://test.pypi.org/simple/ james-bond-assistant
 ```
 
 
