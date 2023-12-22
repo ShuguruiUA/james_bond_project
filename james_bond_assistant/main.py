@@ -1,10 +1,7 @@
-
-import os
-import pickle
-import pathlib
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
 from james_bond_assistant.james_logic import clean, boot_logo, edit_note, delete_note, add_address, add_birthday, add_email, add_phone, edit_phone, remove_phone, save, load, note_file, find_phone, find_record, find_tag, uncoming_birthdays, create_contact, create_note, show_contacts, show_notes, delete_contact
+import getpass
 
 RED = "\033[91m"
 GREEN = "\033[92m"
@@ -13,7 +10,7 @@ RESET = "\033[0m"
 
 
 exit_list = ('exit', 'quit', 'end')
-
+help_comm = ('help','?')
 
 command_menu = WordCompleter(['create-note', 'show-notes', 'save-data', 'load-data',
                               'quit', 'exit', 'find-tag', 'create-contact', 'show-contacts', 'find-record', 'add-phone',
@@ -98,11 +95,17 @@ def main():
         elif operation.startswith('clean-folder'):
             clean()
             
-        
+        elif operation.startswith(help_comm):
+            help()
+
 
         else:
             pass
 
 
 if __name__ == "__main__":
-    main()
+    pwd = getpass.getpass('Enter your password here: ')
+    
+    if pwd.lower() == 'pwd':
+        main()
+    print(f'You enter a wrong password! Good bye!')
