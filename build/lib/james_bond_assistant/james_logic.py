@@ -342,7 +342,7 @@ if __name__ == "__main__":
 
 
 # help
-def get_help():
+def help():
     boot_logo()
     table_help = Table(title='[italic #FF6C00]Commands and description :question_mark:', header_style='#FF6C00', show_lines=True, border_style='#F0F0F0')
     table_help.add_column('Command', justify='center', style='#2771ea', no_wrap=True, min_width= 16)

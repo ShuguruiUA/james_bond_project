@@ -1,6 +1,6 @@
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
-from james_bond_assistant.james_logic import get_help, clean, boot_logo, edit_note, delete_note, add_address, add_birthday, add_email, add_phone, edit_phone, remove_phone, save, load, note_file, find_phone, find_record, find_tag, uncoming_birthdays, create_contact, create_note, show_contacts, show_notes, delete_contact
+from james_bond_assistant.james_logic import clean, boot_logo, edit_note, delete_note, add_address, add_birthday, add_email, add_phone, edit_phone, remove_phone, save, load, note_file, find_phone, find_record, find_tag, uncoming_birthdays, create_contact, create_note, show_contacts, show_notes, delete_contact
 import getpass
 
 RED = "\033[91m"
@@ -96,7 +96,7 @@ def main():
             clean()
             
         elif operation.startswith(help_comm):
-            get_help()
+            help()
 
 
         else:

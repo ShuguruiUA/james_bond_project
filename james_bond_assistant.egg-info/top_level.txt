@@ -1,0 +1,3 @@
+build
+dist
+james_bond_assistant

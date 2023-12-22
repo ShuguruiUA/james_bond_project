@@ -1,0 +1,2 @@
+[console_scripts]
+007-assistant = james_bond_assistant.main:main
