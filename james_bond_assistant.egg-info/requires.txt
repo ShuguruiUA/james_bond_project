@@ -1,2 +1,0 @@
-prompt-toolkit==3.0.43
-rich==13.7.0
