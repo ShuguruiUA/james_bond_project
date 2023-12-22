@@ -1,6 +1,6 @@
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
-from james_bond_assistant.james_logic import get_help, clean, boot_logo, edit_note, delete_note, add_address, add_birthday, add_email, add_phone, edit_phone, remove_phone, save, load, note_file, find_phone, find_record, find_tag, uncoming_birthdays, create_contact, create_note, show_contacts, show_notes, delete_contact
+from james_bond_assistant.james_logic import secure_main, get_help, clean, boot_logo, edit_note, delete_note, add_address, add_birthday, add_email, add_phone, edit_phone, remove_phone, save, load, note_file, find_phone, find_record, find_tag, uncoming_birthdays, create_contact, create_note, show_contacts, show_notes, delete_contact
 import getpass
 
 RED = "\033[91m"
@@ -104,8 +104,9 @@ def main():
 
 
 if __name__ == "__main__":
-    pwd = getpass.getpass('Enter your password here: ')
+    secure_main(main)
+    # pwd = getpass.getpass('Enter your password here: ')
     
-    if pwd.lower() == 'pwd':
-        main()
-    print(f'You enter a wrong password! Good bye!')
+    # if pwd.lower() == 'pwd':
+    #     main()
+    # print(f'You enter a wrong password! Good bye!')

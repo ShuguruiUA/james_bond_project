@@ -341,6 +341,15 @@ if __name__ == "__main__":
     pass
 
 
+# пароль
+def secure_main(func):
+    import getpass
+    pwd = getpass.getpass('Enter you password here: ')
+    if pwd == 'pwd':
+        func()
+        
+    return print(f'You entered a wrong password, good bye!')
+
 # help
 def get_help():
     boot_logo()
