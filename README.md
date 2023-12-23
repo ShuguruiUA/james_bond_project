@@ -25,7 +25,7 @@ Download all files.
 Requires pip to install.
 
 ```sh
-$ pip install [folder path setup.py]
+$ pip [folder path setup.py] install 
 $ pip install -i https://test.pypi.org/simple/ james-bond-assistant
 ```
 
